@@ -1,0 +1,453 @@
+body {
+  /* Dark background color */
+  background-color: #0d0d0d;
+  
+  /* Subtle grid background */
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+  margin: 0;
+  padding: 20px;
+  color: #e0f7fa;
+  font-family: monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: #e0f7fa;
+  text-shadow: 0 0 5px #00e5ff, 
+               0 0 10px #00e5ff, 
+               0 0 20px #00bcd4, 
+               0 0 40px #00838f;
+  font-family: monospace;
+  text-align: center;
+  /* Responsive size taaki screen par perfect fit ho */
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  margin: 10px 0 30px 0;
+}
+
+/* Game Container Styling */
+.game-wrapper {
+  background: #141414;
+  border: 2px solid #00e5ff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.25);
+  max-width: 840px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.game-title {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #ff3d00;
+  text-shadow: 0 0 10px rgba(255, 61, 0, 0.6);
+}
+
+.score-board {
+  display: flex;
+  gap: 20px;
+  font-size: 1.2rem;
+  color: #ffd600;
+}
+
+.canvas-container {
+  position: relative;
+  width: 100%;
+  border: 3px solid #333;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #5c94fc; /* Classic Mario Sky Blue */
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+/* Start / Game Over Overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(13, 13, 13, 0.85);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.overlay h3 {
+  font-size: 2.5rem;
+  margin: 0 0 10px 0;
+  color: #ffd600;
+  text-shadow: 0 0 10px #ff6d00;
+}
+
+.overlay p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #e0f7fa;
+}
+
+#startBtn {
+  background: #ff3d00;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.3rem;
+  font-family: monospace;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #b71c1c, 0 0 15px rgba(255, 61, 0, 0.6);
+  transition: transform 0.1s;
+}
+
+#startBtn:hover {
+  background: #ff5722;
+}
+
+#startBtn:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #b71c1c;
+}
+
+
+
+
+
+
+body {
+  /* Dark background color */
+  background-color: #0d0d0d;
+  
+  /* Subtle grid background */
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+  margin: 0;
+  padding: 20px;
+  color: #e0f7fa;
+  font-family: monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: #e0f7fa;
+  text-shadow: 0 0 5px #00e5ff, 
+               0 0 10px #00e5ff, 
+               0 0 20px #00bcd4, 
+               0 0 40px #00838f;
+  font-family: monospace;
+  text-align: center;
+  /* Responsive size taaki screen par perfect fit ho */
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  margin: 10px 0 30px 0;
+}
+
+/* Game Container Styling */
+.game-wrapper {
+  background: #141414;
+  border: 2px solid #00e5ff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.25);
+  max-width: 840px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.game-title {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #ff3d00;
+  text-shadow: 0 0 10px rgba(255, 61, 0, 0.6);
+}
+
+.score-board {
+  display: flex;
+  gap: 20px;
+  font-size: 1.2rem;
+  color: #ffd600;
+}
+
+.canvas-container {
+  position: relative;
+  width: 100%;
+  border: 3px solid #333;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #5c94fc; /* Classic Mario Sky Blue */
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+/* Start / Game Over Overlay */
+.overlay2 {
+  position: absolute;
+  inset: 0;
+  background: rgba(13, 13, 13, 0.85);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.overlay h3 {
+  font-size: 2.5rem;
+  margin: 0 0 10px 0;
+  color: #ffd600;
+  text-shadow: 0 0 10px #ff6d00;
+}
+
+.overlay2 p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #e0f7fa;
+}
+
+#startBtn2 {
+  background: #ff3d00;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.3rem;
+  font-family: monospace;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #b71c1c, 0 0 15px rgba(255, 61, 0, 0.6);
+  transition: transform 0.1s;
+}
+
+#startBtn2:hover {
+  background: #ff5722;
+}
+
+#startBtn2:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #b71c1c;
+}
+
+
+
+
+body {
+  /* Dark background color */
+  background-color: #0d0d0d;
+  
+  /* Subtle grid background */
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+  margin: 0;
+  padding: 20px;
+  color: #e0f7fa;
+  font-family: monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: #e0f7fa;
+  text-shadow: 0 0 5px #00e5ff, 
+               0 0 10px #00e5ff, 
+               0 0 20px #00bcd4, 
+               0 0 40px #00838f;
+  font-family: monospace;
+  text-align: center;
+  /* Responsive size taaki screen par perfect fit ho */
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  margin: 10px 0 30px 0;
+}
+
+/* Game Container Styling */
+.game-wrapper {
+  background: #141414;
+  border: 2px solid #00e5ff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.25);
+  max-width: 840px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.game-title {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #ff3d00;
+  text-shadow: 0 0 10px rgba(255, 61, 0, 0.6);
+}
+
+.score-board {
+  display: flex;
+  gap: 20px;
+  font-size: 1.2rem;
+  color: #ffd600;
+}
+
+.canvas-container {
+  position: relative;
+  width: 100%;
+  border: 3px solid #333;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #5c94fc; /* Classic Mario Sky Blue */
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+/* Start / Game Over Overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(13, 13, 13, 0.85);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.overlay3 h3 {
+  font-size: 2.5rem;
+  margin: 0 0 10px 0;
+  color: #ffd600;
+  text-shadow: 0 0 10px #ff6d00;
+}
+
+.overlay3 p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #e0f7fa;
+}
+
+#startBtn3 {
+  background: #ff3d00;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.3rem;
+  font-family: monospace;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #b71c1c, 0 0 15px rgba(255, 61, 0, 0.6);
+  transition: transform 0.1s;
+}
+
+#startBtn3:hover {
+  background: #ff5722;
+}
+
+#startBtn3:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #b71c1c;
+
+  /* Gaming Zone Login & Feedback Modal CSS */
+.gz-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  font-family: Arial, sans-serif;
+}
+
+.gz-modal-content {
+  background: #1e1e2f;
+  color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+  border: 1px solid #00ff88;
+}
+
+.gz-modal-content input,
+.gz-modal-content textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 15px 0;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.gz-modal-content button {
+  width: 100%;
+  padding: 12px;
+  background: #00ff88;
+  color: #000;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.gz-modal-content button:hover {
+  background: #00cc6a;
+}  
