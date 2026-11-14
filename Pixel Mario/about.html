@@ -1,1 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Mobile par zoom aur accidental scroll rokne ke liye -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Pixel Mario</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
 
+    <!-- 9:16 Mobile Container -->
+    <div id="mobileWrapper">
+        
+        <!-- Top Header & Back Button -->
+        <div id="topBar">
+           <button id="backBtn" class="icon-btn" onclick="goBack()">⬅ Back</button>
+
+
+            <div class="scores">
+                <span>SCORE: <b id="score">0</b></span>
+                <span>BEST: <b id="highScore">0</b></span>
+            </div>
+        </div>
+
+        <!-- Game Canvas (9:16 Portrait Resolution) -->
+        <canvas id="gameCanvas" width="360" height="640"></canvas>
+
+        <!-- Start / Menu Screen -->
+        <div id="startScreen" class="overlay-screen">
+            <h1>Pixel Mario<br>RUNNER</h1>
+            <p>Mobile 9:16 Edition</p>
+            <button id="startBtn" class="main-btn">PLAY GAME</button>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div id="gameOverScreen" class="overlay-screen" style="display: none;">
+            <h2 style="color: #ff4757; font-size: 36px; margin: 0;">GAME OVER!</h2>
+            <p style="font-size: 20px;">Score: <span id="finalScore">0</span></p>
+            <button id="restartBtn" class="main-btn">Play Again</button>
+        </div>
+
+        <!-- On-Screen Mobile Controls -->
+        <div id="controlsArea">
+            <!-- Left: Up & Down Arrows -->
+            <div class="control-group vertical">
+                <button id="btnUp" class="ctrl-btn">▲</button>
+                <button id="btnDown" class="ctrl-btn">▼</button>
+            </div>
+
+            <!-- Center: Jump Button -->
+            <div class="control-group center">
+                <button id="btnJump" class="jump-btn">JUMP</button>
+            </div>
+
+            <!-- Right: Left & Right Arrows -->
+            <div class="control-group horizontal">
+                <button id="btnLeft" class="ctrl-btn">◀</button>
+                <button id="btnRight" class="ctrl-btn">▶</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script2.js"></script>
+</body>
+</html>  
