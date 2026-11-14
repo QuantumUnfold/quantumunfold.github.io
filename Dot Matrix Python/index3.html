@@ -1,1 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Dot Matrix Python</title>
+    <link rel="stylesheet" href="style4.css">
+</head>
+<body>
 
+    <div class="handheld-body" id="handheld-body">
+        <!-- Top Speaker Grill & Custom Brand Name -->
+        <div class="top-speaker"></div>
+        <!-- Yahan aap apni website ya brand ka naam likh sakte hain -->
+        <div class="brand-title">DOT MATRIX PYTHON</div>
+
+        <!-- LCD Bezel -->
+        <div class="lcd-bezel">
+            <!-- Top Status Bar -->
+            <div class="status-bar">
+                <span>SCORE: <strong id="score">0000</strong></span>
+                <span id="combo-badge" class="combo-badge">x1</span>
+                <span>BEST: <strong id="high-score">0000</strong></span>
+            </div>
+
+            <!-- Main Game Screen -->
+            <div class="screen-wrapper">
+                <canvas id="gameCanvas" width="320" height="320"></canvas>
+
+                <!-- Start / Menu / Game Over Overlay -->
+                <div id="overlay" class="overlay">
+                    <h1 id="overlay-title">DOT MATRIX PYTHON</h1>
+                    <p id="overlay-msg">Select Mode & Play</p>
+
+                    <!-- Mode Selector -->
+                    <div class="mode-selector" id="mode-selector">
+                        <button class="mode-btn active" data-mode="classic">CLASSIC</button>
+                        <button class="mode-btn" data-mode="boxed">BOXED</button>
+                        <button class="mode-btn" data-mode="campaign">LEVELS</button>
+                    </div>
+
+                    <button id="start-btn" class="primary-btn">PLAY GAME</button>
+                    <button id="resume-btn" class="primary-btn hidden">RESUME</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Handheld Navigation & Soft Keys -->
+        <div class="keypad">
+            <div class="soft-keys">
+                <button class="soft-btn" id="btn-pause">PAUSE</button>
+                <div class="center-ok" id="btn-ok">START</div>
+                <button class="soft-btn" id="btn-sound">SFX: ON</button>
+            </div>
+
+            <!-- D-Pad -->
+            <div class="dpad">
+                <button class="dpad-btn up" id="btn-up" aria-label="Up">▲</button>
+                <div class="dpad-middle">
+                    <button class="dpad-btn left" id="btn-left" aria-label="Left">◀</button>
+                    <div class="dpad-center"></div>
+                    <button class="dpad-btn right" id="btn-right" aria-label="Right">▶</button>
+                </div>
+                <button class="dpad-btn down" id="btn-down" aria-label="Down">▼</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script4.js"></script>
+</body>
+</html>   

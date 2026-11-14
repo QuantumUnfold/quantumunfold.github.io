@@ -1,0 +1,294 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+body {
+    background: radial-gradient(circle at center, #232732 0%, #111318 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden;
+}
+
+/* Retro Handheld Console Shell */
+.handheld-body {
+    background: linear-gradient(145deg, #2b354f, #1a2030);
+    padding: 18px 20px 26px;
+    border-radius: 28px 28px 36px 36px;
+    box-shadow: 
+        0 20px 50px rgba(0, 0, 0, 0.75),
+        inset 0 2px 4px rgba(255, 255, 255, 0.18),
+        inset 0 -4px 8px rgba(0, 0, 0, 0.5);
+    border: 3px solid #3c486b;
+    width: 100%;
+    max-width: 325px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.05s;
+}
+
+/* Screen Shake Animation on Crash */
+.shake {
+    animation: shakeAnim 0.3s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shakeAnim {
+    10%, 90% { transform: translate3d(-3px, 0, 0); }
+    20%, 80% { transform: translate3d(4px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-5px, 0, 0); }
+    40%, 60% { transform: translate3d(5px, 0, 0); }
+}
+
+.top-speaker {
+    width: 48px;
+    height: 6px;
+    background: #111520;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.8);
+}
+
+.brand-title {
+    color: #e2e8f0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    letter-spacing: 4px;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+}
+
+/* Dark Screen Bezel */
+.lcd-bezel {
+    width: 100%;
+    background: #14171f;
+    padding: 10px;
+    border-radius: 16px 16px 24px 24px;
+    box-shadow: inset 0 3px 8px rgba(0,0,0,0.9);
+}
+
+/* Retro Green LCD Status Bar */
+.status-bar {
+    width: 100%;
+    background-color: #8bac0f;
+    color: #0f380f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 10px;
+    border-bottom: 2px solid #0f380f;
+    border-radius: 6px 6px 0 0;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.combo-badge {
+    background: #0f380f;
+    color: #9bbc0f;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.screen-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #9bbc0f;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+    box-shadow: inset 0 0 18px rgba(15, 56, 15, 0.35);
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    image-rendering: pixelated;
+}
+
+/* Overlay Menu */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(155, 188, 15, 0.94);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #0f380f;
+    text-align: center;
+    padding: 16px;
+    z-index: 10;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.overlay h1 {
+    font-size: 1.9rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+    text-shadow: 2px 2px 0px #8bac0f;
+}
+
+.overlay p {
+    font-size: 0.95rem;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+
+/* Mode Buttons */
+.mode-selector {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.mode-btn {
+    background: transparent;
+    border: 2px solid #0f380f;
+    color: #0f380f;
+    padding: 5px 8px;
+    font-family: inherit;
+    font-size: 0.75rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.mode-btn.active {
+    background: #0f380f;
+    color: #9bbc0f;
+}
+
+.primary-btn {
+    background-color: #0f380f;
+    color: #9bbc0f;
+    border: none;
+    padding: 11px 22px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #061a06;
+}
+
+.primary-btn:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #061a06;
+}
+
+/* Keypad Area */
+.keypad {
+    width: 100%;
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.soft-keys {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.soft-btn {
+    background: linear-gradient(145deg, #3b4664, #252c40);
+    color: #cbd5e1;
+    border: 1px solid #4d5b80;
+    padding: 7px 14px;
+    border-radius: 14px;
+    font-family: sans-serif;
+    font-size: 0.72rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 3px 0 #121622;
+}
+
+.soft-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 #121622;
+}
+
+.center-ok {
+    background: linear-gradient(145deg, #4b587c, #2f3852);
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 16px;
+    font-family: sans-serif;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border: 2px solid #64748b;
+    cursor: pointer;
+    box-shadow: 0 3px 0 #121622;
+}
+
+/* D-Pad Controls */
+.dpad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.dpad-middle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dpad-center {
+    width: 30px;
+    height: 30px;
+    background: #1a2030;
+    border-radius: 50%;
+    border: 2px solid #3c486b;
+}
+
+.dpad-btn {
+    width: 60px;
+    height: 40px;
+    background: linear-gradient(145deg, #3b4664, #252c40);
+    color: #f1f5f9;
+    border: 2px solid #4d5b80;
+    border-radius: 14px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #121622;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dpad-btn:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #121622;
+    background: #252c40;
+}
+
+/* Fullscreen fit on small mobile phones */
+@media (max-width: 420px) {
+    .handheld-body {
+        border-radius: 0;
+        min-height: 100vh;
+        justify-content: space-between;
+        padding: 12px 16px 20px;
+        border: none;
+    }
+}
