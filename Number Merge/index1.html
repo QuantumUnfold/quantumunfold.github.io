@@ -1,1 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>2048 Game</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="header">
+            <h1>2048</h1>
+            <div class="scores">
+                <div class="score-box">
+                    <span>SCORE</span>
+                    <div id="score">0</div>
+                </div>
+                <div class="score-box">
+                    <span>BEST</span>
+                    <div id="best-score">0</div>
+                </div>
+            </div>
+        </div>
 
+        <div class="controls-top">
+            <p>Join numbers to get <strong>2048!</strong></p>
+            <button id="new-game-btn">New Game</button>
+        </div>
+
+        <div class="game-container" id="game-container">
+            <div class="grid" id="grid"></div>
+            <div class="game-message" id="game-message">
+                <p id="message-text"></p>
+                <button id="retry-btn">Try Again</button>
+            </div>
+        </div>
+
+        <!-- On-Screen Controls for Mobile & Mouse Users -->
+        <div class="d-pad">
+            <button class="dir-btn" id="up-btn" aria-label="Up">▲</button>
+            <div class="d-pad-row">
+                <button class="dir-btn" id="left-btn" aria-label="Left">◀</button>
+                <button class="dir-btn" id="down-btn" aria-label="Down">▼</button>
+                <button class="dir-btn" id="right-btn" aria-label="Right">▶</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script3.js"></script>
+</body>
+</html>  
